@@ -1,0 +1,69 @@
+.light {
+    background: linear-gradient(to right, var(--DarkDesaturatedBlue) 50%, var(--VeryPaleBlue) 50%);
+    background-size: 200%;
+    background-position: right;
+    color: var(--VeryDarkBlue);
+    transition: all 0.5s;
+
+    .nav-brand-main {
+        color: var(--VeryDarkBlue);
+        transition: all 0.5s;
+    }
+
+    .nav-brand-sub {
+        color: var(--DarkGrayishBlue);
+        font-weight: 700;
+        transition: all 0.5s;
+    }
+
+    .nav-action {
+        color: var(--DarkGrayishBlue);
+        font-weight: 700;
+        display: flex;
+        align-items: flex-start;
+        transition: all 0.5s;
+
+        .nav-action-btn {
+            margin-left: 1rem;
+            width: 3rem;
+            height: 1.5rem;
+            background: var(--ToggleLight);
+            border-radius: 100px;
+            position: relative;
+            transition: all 0.5s;
+
+            &:hover {
+                background: var(--ToggleDark);
+                cursor: pointer;
+            }
+
+            button {
+                position: absolute;
+                height: 1.2rem;
+                width: 1.2rem;
+                border-radius: 55%;
+                border: none;
+                background-color: var(--VeryPaleBlue);
+                top: 50%;
+                transform: translateY(-50%);
+                right: 5%;
+                transition: all 0.5s;
+
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:800px) {
+    .light {
+        .nav-action {
+            justify-content: space-between;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.4);
+        }
+    }
+}

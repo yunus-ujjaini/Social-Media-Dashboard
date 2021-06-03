@@ -1,0 +1,68 @@
+.dark {
+    background: linear-gradient(to right, var(--VeryDarkBlue) 50%, var(--VeryPaleBlue) 50%);
+    background-size: 200%;
+    background-position: left;
+    color: var(--White);
+    transition: all 0.5s;
+
+    .nav-brand-main {
+        color: var(--White);
+        transition: all 0.5s;
+    }
+
+    .nav-brand-sub {
+        color: var(--DesaturatedBlue);
+        font-weight: 700;
+        transition: all 0.5s;
+    }
+
+    .nav-action {
+        color: var(--DesaturatedBlue);
+        font-weight: 700;
+        display: flex;
+        align-items: flex-start;
+        transition: all 0.5s;
+
+        .nav-action-btn {
+            margin-left: 1rem;
+            width: 3rem;
+            height: 1.5rem;
+            background: var(--ToggleDark);
+            border-radius: 100px;
+            position: relative;
+            transition: all 0.5s;
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            button {
+                position: absolute;
+                height: 1.2rem;
+                width: 1.2rem;
+                border-radius: 55%;
+                border: none;
+                background-color: var(--DarkDesaturatedBlue);
+                top: 50%;
+                transform: translateY(-50%);
+                left: 5%;
+                transition: all 0.5s;
+
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:800px) {
+    .dark {
+        .nav-action {
+            justify-content: space-between;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.4);
+        }
+    }
+}

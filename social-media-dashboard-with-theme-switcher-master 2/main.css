@@ -1,0 +1,1509 @@
+/*
+ * [Modified] Modern CSS Reset
+ * @link https://github.com/hankchizljaw/modern-css-reset
+*/
+/* Box sizing rules */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  font-size: 100%;
+  line-height: 1.5;
+  text-rendering: optimizeSpeed;
+  overflow-x: hidden;
+}
+
+/* Make images easier to work with */
+img {
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    -webkit-animation-duration: 0.01ms !important;
+            animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+            animation-iteration-count: 1 !important;
+    -webkit-transition-duration: 0.01ms !important;
+            transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+:root {
+  --LimeGreen: hsl(163, 72%, 41%);
+  --BrightRed: hsl(356, 69%, 56%);
+  --Facebook: hsl(208, 92%, 53%);
+  --Twitter: hsl(203, 89%, 53%);
+  --Instagram: linear-gradient(to right,hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+  --YouTube: hsl(348, 97%, 39%);
+  --ToggleDark: linear-gradient(to right,hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+  --ToggleLight: hsl(230, 22%, 74%);
+  --DarkBlue: hsl(230, 17%, 14%);
+  --VeryDarkBlue: hsl(232, 19%, 15%);
+  --DarkDesaturatedBlue: rgb(37, 42, 65);
+  --DesaturatedBlue: hsl(228, 34%, 66%);
+  --White: hsl(0, 0%, 100%);
+  --White: hsl(0, 0%, 100%);
+  --VeryPaleBlue: hsl(225, 100%, 98%);
+  --LightGrayishBlue: rgb(240, 242, 250);
+  --DarkGrayishBlue: hsl(228, 12%, 44%);
+  --VeryDarkBlue2: hsl(230, 17%, 14%);
+}
+
+.dark {
+  background: -webkit-gradient(linear, left top, right top, color-stop(50%, var(--VeryDarkBlue)), color-stop(50%, var(--VeryPaleBlue)));
+  background: linear-gradient(to right, var(--VeryDarkBlue) 50%, var(--VeryPaleBlue) 50%);
+  background-size: 200%;
+  background-position: left;
+  color: var(--White);
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.dark .nav-brand-main {
+  color: var(--White);
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.dark .nav-brand-sub {
+  color: var(--DesaturatedBlue);
+  font-weight: 700;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.dark .nav-action {
+  color: var(--DesaturatedBlue);
+  font-weight: 700;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.dark .nav-action .nav-action-btn {
+  margin-left: 1rem;
+  width: 3rem;
+  height: 1.5rem;
+  background: var(--ToggleDark);
+  border-radius: 100px;
+  position: relative;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.dark .nav-action .nav-action-btn:hover {
+  cursor: pointer;
+}
+
+.dark .nav-action .nav-action-btn button {
+  position: absolute;
+  height: 1.2rem;
+  width: 1.2rem;
+  border-radius: 55%;
+  border: none;
+  background-color: var(--DarkDesaturatedBlue);
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  left: 5%;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.dark .nav-action .nav-action-btn button:hover {
+  cursor: pointer;
+}
+
+@media (max-width: 800px) {
+  .dark .nav-action {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.4);
+  }
+}
+
+.light {
+  background: -webkit-gradient(linear, left top, right top, color-stop(50%, var(--DarkDesaturatedBlue)), color-stop(50%, var(--VeryPaleBlue)));
+  background: linear-gradient(to right, var(--DarkDesaturatedBlue) 50%, var(--VeryPaleBlue) 50%);
+  background-size: 200%;
+  background-position: right;
+  color: var(--VeryDarkBlue);
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.light .nav-brand-main {
+  color: var(--VeryDarkBlue);
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.light .nav-brand-sub {
+  color: var(--DarkGrayishBlue);
+  font-weight: 700;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.light .nav-action {
+  color: var(--DarkGrayishBlue);
+  font-weight: 700;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.light .nav-action .nav-action-btn {
+  margin-left: 1rem;
+  width: 3rem;
+  height: 1.5rem;
+  background: var(--ToggleLight);
+  border-radius: 100px;
+  position: relative;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.light .nav-action .nav-action-btn:hover {
+  background: var(--ToggleDark);
+  cursor: pointer;
+}
+
+.light .nav-action .nav-action-btn button {
+  position: absolute;
+  height: 1.2rem;
+  width: 1.2rem;
+  border-radius: 55%;
+  border: none;
+  background-color: var(--VeryPaleBlue);
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  right: 5%;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.light .nav-action .nav-action-btn button:hover {
+  cursor: pointer;
+}
+
+@media (max-width: 800px) {
+  .light .nav-action {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.4);
+  }
+}
+
+.darkCard {
+  background: -webkit-gradient(linear, left top, right top, color-stop(50%, var(--DarkBlue)), color-stop(50%, var(--White)));
+  background: linear-gradient(to right, var(--DarkBlue) 50%, var(--White) 50%);
+  background-size: 200%;
+  background-position: left;
+  color: var(--White);
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.darkCard .top-card {
+  height: 15vw;
+  width: 17vw;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  background: -webkit-gradient(linear, left top, right top, color-stop(50%, var(--DarkDesaturatedBlue)), color-stop(50%, var(--LightGrayishBlue)));
+  background: linear-gradient(to right, var(--DarkDesaturatedBlue) 50%, var(--LightGrayishBlue) 50%);
+  background-size: 200%;
+  background-position: left;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.darkCard .top-card:hover {
+  cursor: pointer;
+  background: -webkit-gradient(linear, left top, right top, color-stop(50%, #313856), color-stop(50%, #e1e3eb));
+  background: linear-gradient(to right, #313856 50%, #e1e3eb 50%);
+  background-size: 200%;
+  background-position: left;
+}
+
+.darkCard .top-card::before {
+  position: absolute;
+  content: '';
+  left: 0px;
+  right: 0px;
+  height: 5px;
+  top: 0px;
+}
+
+.darkCard .top-card-facebook {
+  position: relative;
+}
+
+.darkCard .top-card-facebook::before {
+  background-color: var(--Facebook);
+}
+
+.darkCard .top-card-twitter {
+  position: relative;
+}
+
+.darkCard .top-card-twitter::before {
+  background-color: var(--Twitter);
+}
+
+.darkCard .top-card-instagram {
+  position: relative;
+}
+
+.darkCard .top-card-instagram::before {
+  background: var(--Instagram);
+}
+
+.darkCard .top-card-youtube {
+  position: relative;
+}
+
+.darkCard .top-card-youtube::before {
+  background-color: var(--YouTube);
+}
+
+.darkCard .top-card-username {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.darkCard .top-card-username-logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.darkCard .top-card-username-main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-left: 5px;
+}
+
+.darkCard .top-card-data {
+  text-align: center;
+  font-size: 3vw;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.darkCard .top-card-data-followers {
+  font-size: 0.9vw;
+  letter-spacing: 2px;
+  font-weight: 300;
+  color: var(--DarkGrayishBlue);
+}
+
+.darkCard .top-card-rise {
+  font-size: 0.7vw;
+  font-weight: 700;
+  position: relative;
+}
+
+.darkCard .top-card-rise::before {
+  content: '';
+  position: absolute;
+  width: 1vw;
+}
+
+.darkCard .top-card-rise-up {
+  color: var(--LimeGreen);
+}
+
+.darkCard .top-card-rise-up::before {
+  background: url("images/icon-up.svg");
+  background-repeat: no-repeat;
+  top: 0px;
+  bottom: 0px;
+  background-position: center;
+  left: -1.2vw;
+}
+
+.darkCard .top-card-rise-down {
+  color: var(--BrightRed);
+}
+
+.darkCard .top-card-rise-down::before {
+  background: url("images/icon-down.svg");
+  background-repeat: no-repeat;
+  top: 0px;
+  bottom: 0px;
+  background-position: center;
+  left: -1.2vw;
+}
+
+@media (max-width: 800px) {
+  .darkCard .top-card {
+    width: 80vw;
+    height: 50vw;
+    margin: 1rem 0rem;
+    -webkit-transform: translateY(-20%);
+            transform: translateY(-20%);
+  }
+  .darkCard .top-card-username {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .darkCard .top-card-username-logo {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .darkCard .top-card-username-main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-left: 5px;
+    font-size: 1rem;
+  }
+  .darkCard .top-card-data {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: normal;
+  }
+  .darkCard .top-card-data-followers {
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    font-weight: 300;
+    color: var(--DarkGrayishBlue);
+  }
+  .darkCard .top-card-rise {
+    font-size: 0.7rem;
+    font-weight: 700;
+    position: relative;
+  }
+  .darkCard .top-card-rise::before {
+    content: '';
+    position: absolute;
+    width: 1vw;
+  }
+  .darkCard .top-card-rise-up {
+    color: var(--LimeGreen);
+  }
+  .darkCard .top-card-rise-up::before {
+    background: url("images/icon-up.svg");
+    background-repeat: no-repeat;
+    top: 0px;
+    bottom: 0px;
+    background-position: center;
+    left: -0.8rem;
+  }
+  .darkCard .top-card-rise-down {
+    color: var(--BrightRed);
+  }
+  .darkCard .top-card-rise-down::before {
+    background: url("images/icon-down.svg");
+    background-repeat: no-repeat;
+    top: 0px;
+    bottom: 0px;
+    background-position: center;
+    left: -0.8rem;
+  }
+}
+
+.lightCard {
+  background: -webkit-gradient(linear, left top, right top, color-stop(50%, var(--DarkBlue)), color-stop(50%, var(--White)));
+  background: linear-gradient(to right, var(--DarkBlue) 50%, var(--White) 50%);
+  background-size: 200%;
+  background-position: right;
+  color: var(--VeryDarkBlue2);
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.lightCard .top-card {
+  height: 15vw;
+  width: 17vw;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  background: -webkit-gradient(linear, left top, right top, color-stop(50%, var(--DarkDesaturatedBlue)), color-stop(50%, var(--LightGrayishBlue)));
+  background: linear-gradient(to right, var(--DarkDesaturatedBlue) 50%, var(--LightGrayishBlue) 50%);
+  background-size: 200%;
+  background-position: right;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.lightCard .top-card:hover {
+  cursor: pointer;
+  background: -webkit-gradient(linear, left top, right top, color-stop(50%, #313856), color-stop(50%, #e1e3eb));
+  background: linear-gradient(to right, #313856 50%, #e1e3eb 50%);
+  background-size: 200%;
+  background-position: right;
+}
+
+.lightCard .top-card::before {
+  position: absolute;
+  content: '';
+  left: 0px;
+  right: 0px;
+  height: 5px;
+  top: 0px;
+}
+
+.lightCard .top-card-facebook {
+  position: relative;
+}
+
+.lightCard .top-card-facebook::before {
+  background-color: var(--Facebook);
+}
+
+.lightCard .top-card-twitter {
+  position: relative;
+}
+
+.lightCard .top-card-twitter::before {
+  background-color: var(--Twitter);
+}
+
+.lightCard .top-card-instagram {
+  position: relative;
+}
+
+.lightCard .top-card-instagram::before {
+  background: var(--Instagram);
+}
+
+.lightCard .top-card-youtube {
+  position: relative;
+}
+
+.lightCard .top-card-youtube::before {
+  background-color: var(--YouTube);
+}
+
+.lightCard .top-card-username {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.lightCard .top-card-username-logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.lightCard .top-card-username-main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-left: 5px;
+}
+
+.lightCard .top-card-data {
+  text-align: center;
+  font-size: 3vw;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.lightCard .top-card-data-followers {
+  font-size: 0.9vw;
+  letter-spacing: 2px;
+  font-weight: 300;
+  color: var(--DarkGrayishBlue);
+}
+
+.lightCard .top-card-rise {
+  font-size: 0.7vw;
+  font-weight: 700;
+  position: relative;
+}
+
+.lightCard .top-card-rise::before {
+  content: '';
+  position: absolute;
+  width: 1vw;
+}
+
+.lightCard .top-card-rise-up {
+  color: var(--LimeGreen);
+}
+
+.lightCard .top-card-rise-up::before {
+  background: url("images/icon-up.svg");
+  background-repeat: no-repeat;
+  top: 0px;
+  bottom: 0px;
+  background-position: center;
+  left: -1.2vw;
+}
+
+.lightCard .top-card-rise-down {
+  color: var(--BrightRed);
+}
+
+.lightCard .top-card-rise-down::before {
+  background: url("images/icon-down.svg");
+  background-repeat: no-repeat;
+  top: 0px;
+  bottom: 0px;
+  background-position: center;
+  left: -1.2vw;
+}
+
+@media (max-width: 800px) {
+  .lightCard .top-card {
+    width: 80vw;
+    height: 50vw;
+    margin: 1rem 0rem;
+    -webkit-transform: translateY(-20%);
+            transform: translateY(-20%);
+  }
+  .lightCard .top-card-username {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .lightCard .top-card-username-logo {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .lightCard .top-card-username-main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-left: 5px;
+    font-size: 1rem;
+  }
+  .lightCard .top-card-data {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: normal;
+  }
+  .lightCard .top-card-data-followers {
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    font-weight: 300;
+    color: var(--DarkGrayishBlue);
+  }
+  .lightCard .top-card-rise {
+    font-size: 0.7rem;
+    font-weight: 700;
+    position: relative;
+  }
+  .lightCard .top-card-rise::before {
+    content: '';
+    position: absolute;
+    width: 1vw;
+  }
+  .lightCard .top-card-rise-up {
+    color: var(--LimeGreen);
+  }
+  .lightCard .top-card-rise-up::before {
+    background: url("images/icon-up.svg");
+    background-repeat: no-repeat;
+    top: 0px;
+    bottom: 0px;
+    background-position: center;
+    left: -0.8rem;
+  }
+  .lightCard .top-card-rise-down {
+    color: var(--BrightRed);
+  }
+  .lightCard .top-card-rise-down::before {
+    background: url("images/icon-down.svg");
+    background-repeat: no-repeat;
+    top: 0px;
+    bottom: 0px;
+    background-position: center;
+    left: -0.8rem;
+  }
+}
+
+.lightBottomCard {
+  background: -webkit-gradient(linear, left top, right top, color-stop(50%, var(--DarkBlue)), color-stop(50%, var(--White)));
+  background: linear-gradient(to right, var(--DarkBlue) 50%, var(--White) 50%);
+  background-size: 200%;
+  background-position: right;
+  color: var(--VeryDarkBlue2);
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.lightBottomCard .bottom-cards-title {
+  color: var(--DarkGrayishBlue);
+}
+
+.lightBottomCard .small-cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 0.5vw 0rem;
+}
+
+.lightBottomCard .small-cards .small-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 10vw;
+  width: 17vw;
+  background: -webkit-gradient(linear, left top, right top, color-stop(50%, var(--DarkDesaturatedBlue)), color-stop(50%, var(--LightGrayishBlue)));
+  background: linear-gradient(to right, var(--DarkDesaturatedBlue) 50%, var(--LightGrayishBlue) 50%);
+  background-size: 200%;
+  background-position: right;
+  padding: 1vw 2vw;
+  border-radius: 5px;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+.lightBottomCard .small-cards .small-card:hover {
+  cursor: pointer;
+  background: -webkit-gradient(linear, left top, right top, color-stop(50%, #313856), color-stop(50%, #e1e3eb));
+  background: linear-gradient(to right, #313856 50%, #e1e3eb 50%);
+  background-size: 200%;
+  background-position: right;
+}
+
+.lightBottomCard .small-cards .small-card-top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.lightBottomCard .small-cards .small-card-top-title {
+  font-weight: 700;
+  color: var(--DarkGrayishBlue);
+}
+
+.lightBottomCard .small-cards .small-card-top-icon {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+.lightBottomCard .small-cards .small-card-bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.lightBottomCard .small-cards .small-card-bottom-data {
+  font-size: 2vw;
+  font-weight: 700;
+}
+
+.lightBottomCard .small-cards .small-card-bottom-rise {
+  font-size: 0.7vw;
+  font-weight: 700;
+  position: relative;
+}
+
+.lightBottomCard .small-cards .small-card-bottom-rise::before {
+  content: '';
+  position: absolute;
+  width: 1vw;
+}
+
+.lightBottomCard .small-cards .small-card-bottom-rise-up {
+  color: var(--LimeGreen);
+}
+
+.lightBottomCard .small-cards .small-card-bottom-rise-up::before {
+  background: url("images/icon-up.svg");
+  background-repeat: no-repeat;
+  top: 0px;
+  bottom: 0px;
+  background-position: center;
+  left: -1.2vw;
+}
+
+.lightBottomCard .small-cards .small-card-bottom-rise-down {
+  color: var(--BrightRed);
+}
+
+.lightBottomCard .small-cards .small-card-bottom-rise-down::before {
+  background: url("images/icon-down.svg");
+  background-repeat: no-repeat;
+  top: 0px;
+  bottom: 0px;
+  background-position: center;
+  left: -1.2vw;
+}
+
+@media (max-width: 800px) {
+  .lightBottomCard .bottom-cards-title {
+    margin-left: 10vw;
+    font-size: 1.5rem;
+    color: var(--DarkGrayishBlue);
+  }
+  .lightBottomCard .small-cards {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .lightBottomCard .small-cards .small-card {
+    height: 30vw;
+    width: 80vw;
+    margin: 0.5rem 0rem;
+    padding: 1rem 2rem;
+  }
+  .lightBottomCard .small-cards .small-card-top {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .lightBottomCard .small-cards .small-card-top-title {
+    font-weight: 700;
+    color: var(--DarkGrayishBlue);
+    font-size: 1rem;
+  }
+  .lightBottomCard .small-cards .small-card-top-icon {
+    display: -ms-grid;
+    display: grid;
+    place-items: center;
+  }
+  .lightBottomCard .small-cards .small-card-bottom {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+  }
+  .lightBottomCard .small-cards .small-card-bottom-data {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+  .lightBottomCard .small-cards .small-card-bottom-rise {
+    font-size: 0.7rem;
+    font-weight: 700;
+    position: relative;
+  }
+  .lightBottomCard .small-cards .small-card-bottom-rise::before {
+    content: '';
+    position: absolute;
+    width: 1rem;
+  }
+  .lightBottomCard .small-cards .small-card-bottom-rise-up {
+    color: var(--LimeGreen);
+  }
+  .lightBottomCard .small-cards .small-card-bottom-rise-up::before {
+    background: url("images/icon-up.svg");
+    background-repeat: no-repeat;
+    top: 0px;
+    bottom: 0px;
+    background-position: center;
+    left: -1.2rem;
+  }
+  .lightBottomCard .small-cards .small-card-bottom-rise-down {
+    color: var(--BrightRed);
+  }
+  .lightBottomCard .small-cards .small-card-bottom-rise-down::before {
+    background: url("images/icon-down.svg");
+    background-repeat: no-repeat;
+    top: 0px;
+    bottom: 0px;
+    background-position: center;
+    left: -1.2rem;
+  }
+}
+
+.darkBottomCard {
+  background: -webkit-gradient(linear, left top, right top, color-stop(50%, var(--DarkBlue)), color-stop(50%, var(--White)));
+  background: linear-gradient(to right, var(--DarkBlue) 50%, var(--White) 50%);
+  background-size: 200%;
+  background-position: left;
+  color: var(--White);
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.darkBottomCard .bottom-cards-title {
+  color: var(--White);
+}
+
+.darkBottomCard .small-cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 0.5vw 0rem;
+}
+
+.darkBottomCard .small-cards .small-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 10vw;
+  width: 17vw;
+  background: -webkit-gradient(linear, left top, right top, color-stop(50%, var(--DarkDesaturatedBlue)), color-stop(50%, var(--LightGrayishBlue)));
+  background: linear-gradient(to right, var(--DarkDesaturatedBlue) 50%, var(--LightGrayishBlue) 50%);
+  background-size: 200%;
+  background-position: left;
+  padding: 1vw 2vw;
+  border-radius: 5px;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+.darkBottomCard .small-cards .small-card:hover {
+  cursor: pointer;
+  background: -webkit-gradient(linear, left top, right top, color-stop(50%, #313856), color-stop(50%, #e1e3eb));
+  background: linear-gradient(to right, #313856 50%, #e1e3eb 50%);
+  background-size: 200%;
+  background-position: left;
+}
+
+.darkBottomCard .small-cards .small-card-top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.darkBottomCard .small-cards .small-card-top-title {
+  font-weight: 700;
+  color: var(--DarkGrayishBlue);
+}
+
+.darkBottomCard .small-cards .small-card-top-icon {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+.darkBottomCard .small-cards .small-card-bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.darkBottomCard .small-cards .small-card-bottom-data {
+  font-size: 2vw;
+  font-weight: 700;
+}
+
+.darkBottomCard .small-cards .small-card-bottom-rise {
+  font-size: 0.7vw;
+  font-weight: 700;
+  position: relative;
+}
+
+.darkBottomCard .small-cards .small-card-bottom-rise::before {
+  content: '';
+  position: absolute;
+  width: 1vw;
+}
+
+.darkBottomCard .small-cards .small-card-bottom-rise-up {
+  color: var(--LimeGreen);
+}
+
+.darkBottomCard .small-cards .small-card-bottom-rise-up::before {
+  background: url("images/icon-up.svg");
+  background-repeat: no-repeat;
+  top: 0px;
+  bottom: 0px;
+  background-position: center;
+  left: -1.2vw;
+}
+
+.darkBottomCard .small-cards .small-card-bottom-rise-down {
+  color: var(--BrightRed);
+}
+
+.darkBottomCard .small-cards .small-card-bottom-rise-down::before {
+  background: url("images/icon-down.svg");
+  background-repeat: no-repeat;
+  top: 0px;
+  bottom: 0px;
+  background-position: center;
+  left: -1.2vw;
+}
+
+@media (max-width: 800px) {
+  .darkBottomCard .bottom-cards-title {
+    margin-left: 10vw;
+    font-size: 1.5rem;
+    color: var(--DarkGrayishBlue);
+  }
+  .darkBottomCard .small-cards {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .darkBottomCard .small-cards .small-card {
+    height: 30vw;
+    width: 80vw;
+    margin: 0.5rem 0rem;
+    padding: 1rem 2rem;
+  }
+  .darkBottomCard .small-cards .small-card-top {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .darkBottomCard .small-cards .small-card-top-title {
+    font-weight: 700;
+    color: var(--DarkGrayishBlue);
+    font-size: 1rem;
+  }
+  .darkBottomCard .small-cards .small-card-top-icon {
+    display: -ms-grid;
+    display: grid;
+    place-items: center;
+  }
+  .darkBottomCard .small-cards .small-card-bottom {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+  }
+  .darkBottomCard .small-cards .small-card-bottom-data {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+  .darkBottomCard .small-cards .small-card-bottom-rise {
+    font-size: 0.7rem;
+    font-weight: 700;
+    position: relative;
+  }
+  .darkBottomCard .small-cards .small-card-bottom-rise::before {
+    content: '';
+    position: absolute;
+    width: 1rem;
+  }
+  .darkBottomCard .small-cards .small-card-bottom-rise-up {
+    color: var(--LimeGreen);
+  }
+  .darkBottomCard .small-cards .small-card-bottom-rise-up::before {
+    background: url("images/icon-up.svg");
+    background-repeat: no-repeat;
+    top: 0px;
+    bottom: 0px;
+    background-position: center;
+    left: -1.2rem;
+  }
+  .darkBottomCard .small-cards .small-card-bottom-rise-down {
+    color: var(--BrightRed);
+  }
+  .darkBottomCard .small-cards .small-card-bottom-rise-down::before {
+    background: url("images/icon-down.svg");
+    background-repeat: no-repeat;
+    top: 0px;
+    bottom: 0px;
+    background-position: center;
+    left: -1.2rem;
+  }
+}
+
+.preloader {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background-color: var(--DarkBlue);
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  color: var(--White);
+  -webkit-animation: closePreloader 1s 8s 1 forwards;
+          animation: closePreloader 1s 8s 1 forwards;
+}
+
+.preloader h1 {
+  font-weight: 300;
+  letter-spacing: 2px;
+  position: relative;
+}
+
+.preloader h1 .cover {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+}
+
+.preloader h1 .lines {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+}
+
+.preloader h1 .lines .line {
+  height: 5px;
+  width: 0%;
+  margin: 1px;
+}
+
+.preloader h1 .lines .line1 {
+  background-color: var(--BrightRed);
+  -webkit-animation: lineanim 2s alternate infinite forwards;
+          animation: lineanim 2s alternate infinite forwards;
+}
+
+.preloader h1 .lines .line2 {
+  background: var(--Instagram);
+  -webkit-animation: lineanim 5s 0.3s alternate infinite forwards;
+          animation: lineanim 5s 0.3s alternate infinite forwards;
+}
+
+.preloader h1 .lines .line3 {
+  background-color: var(--LimeGreen);
+  -webkit-animation: lineanim 3s 0.5s alternate infinite forwards;
+          animation: lineanim 3s 0.5s alternate infinite forwards;
+}
+
+.preloader h1 .lines .line4 {
+  background: var(--ToggleDark);
+  -webkit-animation: lineanim 6s 0.8s alternate infinite forwards;
+          animation: lineanim 6s 0.8s alternate infinite forwards;
+}
+
+.preloader h1 .lines .line5 {
+  background-color: var(--ToggleLight);
+  -webkit-animation: lineanim 4s 1s alternate infinite forwards;
+          animation: lineanim 4s 1s alternate infinite forwards;
+}
+
+@-webkit-keyframes reveal {
+  0% {
+    left: 0px;
+    right: 0px;
+  }
+  100% {
+    right: 100%;
+  }
+}
+
+@keyframes reveal {
+  0% {
+    left: 0px;
+    right: 0px;
+  }
+  100% {
+    right: 100%;
+  }
+}
+
+@-webkit-keyframes lineanim {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 90%;
+  }
+}
+
+@keyframes lineanim {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 90%;
+  }
+}
+
+@-webkit-keyframes closePreloader {
+  0% {
+    right: 0px;
+    opacity: 1;
+  }
+  90% {
+    right: 100%;
+    opacity: 0;
+  }
+  100% {
+    right: 100%;
+    opacity: 0;
+    display: none;
+  }
+}
+
+@keyframes closePreloader {
+  0% {
+    right: 0px;
+    opacity: 1;
+  }
+  90% {
+    right: 100%;
+    opacity: 0;
+  }
+  100% {
+    right: 100%;
+    opacity: 0;
+    display: none;
+  }
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  margin: 0px;
+  padding: 0px;
+}
+
+.body-dark {
+  background: -webkit-gradient(linear, left top, right top, color-stop(50%, var(--DarkBlue)), color-stop(50%, var(--White)));
+  background: linear-gradient(to right, var(--DarkBlue) 50%, var(--White) 50%);
+  background-size: 200%;
+  background-position: left;
+}
+
+.body-light {
+  background: -webkit-gradient(linear, left top, right top, color-stop(50%, var(--DarkBlue)), color-stop(50%, var(--White)));
+  background: linear-gradient(to right, var(--DarkBlue) 50%, var(--White) 50%);
+  background-size: 200%;
+  background-position: right;
+}
+
+header {
+  height: 15rem;
+  padding: 2rem 10vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.top-cards {
+  height: 20vh;
+  padding: 0rem 10vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.bottom-cards {
+  height: auto;
+  padding: 0rem 10vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-bottom: 10rem;
+}
+
+@media (max-width: 800px) {
+  header {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    padding: 2rem 7vw;
+  }
+  .top-cards {
+    height: auto;
+    padding: 0rem 0vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .bottom-cards {
+    height: auto;
+    padding: 0rem 0vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding-bottom: 10rem;
+  }
+}
+/*# sourceMappingURL=main.css.map */

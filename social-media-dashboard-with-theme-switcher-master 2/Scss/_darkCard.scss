@@ -1,0 +1,213 @@
+.darkCard {
+    background: linear-gradient(to right, var(--DarkBlue) 50%, var(--White) 50%);
+    background-size: 200%;
+    background-position: left;
+    color: var(--White);
+    transition: all 0.5s;
+
+    .top-card {
+        height: 15vw;
+        width: 17vw;
+        transition: all 1s;
+        background: linear-gradient(to right, var(--DarkDesaturatedBlue) 50%, var(--LightGrayishBlue) 50%);
+        background-size: 200%;
+        background-position: left;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        border-radius: 5px;
+        
+        overflow: hidden;
+        &:hover{
+            
+            cursor: pointer;
+            background: linear-gradient(to right, rgb(49, 56, 86)50%, rgb(225, 227, 235) 50%);
+            background-size: 200%;
+            background-position: left;
+        }
+        &::before{
+            position: absolute;
+            content: '';
+            left: 0px;
+            right: 0px;
+            height: 5px;
+            
+            top: 0px;
+        }
+        &-facebook{
+            position: relative;
+            &::before{
+                background-color: var(--Facebook);
+            }
+        }
+        &-twitter{
+            position: relative;
+            &::before{
+                background-color: var(--Twitter);
+            }
+        }
+        &-instagram{
+            position: relative;
+            &::before{
+                background: var(--Instagram);
+            }
+        }
+        &-youtube{
+            position: relative;
+            &::before{
+                background-color: var(--YouTube);
+            }
+        }
+        &-username {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            &-logo {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            &-main {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-left: 5px;
+            }
+        }
+
+        &-data {
+            text-align: center;
+            font-size: 3vw;
+            font-weight: 700;
+            line-height: normal;
+
+            &-followers {
+                font-size: 0.9vw;
+                letter-spacing: 2px;
+                font-weight: 300;
+                color: var(--DarkGrayishBlue);
+            }
+        }
+
+        &-rise {
+            font-size: 0.7vw;
+            font-weight: 700;
+            position: relative;
+            &::before {
+                content: '';
+                position: absolute;
+                // height: 1vw;
+                width: 1vw;
+                
+            }
+        }
+        &-rise-up{
+           
+            color: var(--LimeGreen);
+            &::before{
+                background: url("images/icon-up.svg");
+                background-repeat: no-repeat;
+                top: 0px;
+                bottom: 0px;
+                background-position: center;
+                left: -1.2vw;
+            }
+        }
+        &-rise-down{
+            color: var(--BrightRed);
+            &::before{
+                background: url("images/icon-down.svg");
+                background-repeat: no-repeat;
+                top: 0px;
+                bottom: 0px;
+                background-position: center;
+                left: -1.2vw;
+            }
+        }
+    }
+}
+@media (max-width:800px) {
+    .darkCard {
+        .top-card {
+            width: 80vw;
+            height: 50vw;
+            margin: 1rem 0rem;
+            transform: translateY(-20%);
+            &-username {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+    
+                &-logo {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    
+                }
+    
+                &-main {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin-left: 5px;
+                    font-size: 1rem;
+                }
+            }
+    
+            &-data {
+                text-align: center;
+                font-size: 3rem;
+                font-weight: 700;
+                line-height: normal;
+    
+                &-followers {
+                    font-size: 0.9rem;
+                    letter-spacing: 2px;
+                    font-weight: 300;
+                    color: var(--DarkGrayishBlue);
+                }
+            }
+    
+            &-rise {
+                font-size: 0.7rem;
+                font-weight: 700;
+                position: relative;
+                &::before {
+                    content: '';
+                    position: absolute;
+                    // height: 1vw;
+                    width: 1vw;
+                    
+                }
+            }
+            &-rise-up{
+           
+                color: var(--LimeGreen);
+                &::before{
+                    background: url("images/icon-up.svg");
+                    background-repeat: no-repeat;
+                    top: 0px;
+                    bottom: 0px;
+                    background-position: center;
+                    left: -0.8rem;
+                }
+            }
+            &-rise-down{
+                color: var(--BrightRed);
+                &::before{
+                    background: url("images/icon-down.svg");
+                    background-repeat: no-repeat;
+                    top: 0px;
+                    bottom: 0px;
+                    background-position: center;
+                    left: -0.8rem;
+                }
+            }
+        }
+        
+    }
+}

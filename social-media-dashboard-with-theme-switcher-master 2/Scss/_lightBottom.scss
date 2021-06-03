@@ -1,0 +1,175 @@
+.lightBottomCard{
+    background: linear-gradient(to right, var(--DarkBlue) 50%, var(--White) 50%);
+    background-size: 200%;
+    background-position: right;
+    color: var(--VeryDarkBlue2);
+    transition: all 0.5s;
+    .bottom-cards-title{
+        color: var(--DarkGrayishBlue);
+    }
+    .small-cards{
+        display: flex;
+        justify-content: space-between;
+        margin: 0.5vw 0rem;
+        .small-card{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 10vw;
+            width: 17vw;
+            background: linear-gradient(to right, var(--DarkDesaturatedBlue) 50%, var(--LightGrayishBlue) 50%);
+            background-size: 200%;
+            background-position: right;
+            padding: 1vw 2vw;
+            border-radius: 5px;
+            transition: all 1s;
+            &:hover{
+            
+                cursor: pointer;
+                background: linear-gradient(to right, rgb(49, 56, 86)50%, rgb(225, 227, 235) 50%);
+                background-size: 200%;
+                background-position: right;
+            }
+            &-top{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                &-title{
+                    font-weight: 700;
+                    color: var(--DarkGrayishBlue);
+                    
+                }
+                &-icon{
+                    display: grid;
+                    place-items: center;
+                }
+            }
+            &-bottom{
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-end;
+                &-data{
+                    font-size: 2vw;
+                    font-weight: 700;
+                }
+                &-rise {
+                    font-size: 0.7vw;
+                    font-weight: 700;
+                    position: relative;
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        // height: 1vw;
+                        width: 1vw;
+                        
+                    }
+                }
+                &-rise-up{
+           
+                    color: var(--LimeGreen);
+                    &::before{
+                        background: url("images/icon-up.svg");
+                        background-repeat: no-repeat;
+                        top: 0px;
+                        bottom: 0px;
+                        background-position: center;
+                        left: -1.2vw;
+                    }
+                }
+                &-rise-down{
+                    color: var(--BrightRed);
+                    &::before{
+                        background: url("images/icon-down.svg");
+                        background-repeat: no-repeat;
+                        top: 0px;
+                        bottom: 0px;
+                        background-position: center;
+                        left: -1.2vw;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width:800px) {
+    .lightBottomCard {
+        .bottom-cards-title{
+            margin-left: 10vw;
+            font-size: 1.5rem;
+            color: var(--DarkGrayishBlue);
+        }
+        .small-cards{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            .small-card{
+                
+                height: 30vw;
+                width: 80vw;
+                
+                margin: 0.5rem 0rem;
+                padding: 1rem 2rem;
+                &-top{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    &-title{
+                        font-weight: 700;
+                        color: var(--DarkGrayishBlue);
+                        font-size: 1rem;
+                    }
+                    &-icon{
+                        display: grid;
+                        place-items: center;
+
+                    }
+                }
+                &-bottom{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: flex-end;
+                    &-data{
+                        font-size: 2rem;
+                        font-weight: 700;
+                    }
+                    &-rise {
+                        font-size: 0.7rem;
+                        font-weight: 700;
+                        position: relative;
+                        &::before {
+                            content: '';
+                            position: absolute;
+                            // height: 1vw;
+                            width: 1rem;
+                            
+                        }
+                    }
+                    &-rise-up{
+               
+                        color: var(--LimeGreen);
+                        &::before{
+                            background: url("images/icon-up.svg");
+                            background-repeat: no-repeat;
+                            top: 0px;
+                            bottom: 0px;
+                            background-position: center;
+                            left: -1.2rem;
+                        }
+                    }
+                    &-rise-down{
+                        color: var(--BrightRed);
+                        &::before{
+                            background: url("images/icon-down.svg");
+                            background-repeat: no-repeat;
+                            top: 0px;
+                            bottom: 0px;
+                            background-position: center;
+                            left: -1.2rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
